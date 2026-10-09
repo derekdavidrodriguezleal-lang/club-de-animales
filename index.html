@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff8e9">
+    <title>Club de animales ridículos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="api.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <span class="sticker" aria-hidden="true">🐾</span>
+        <p class="eyebrow">Admisiones muy serias (más o menos)</p>
+        <h1>Club de animales <span>ridículos</span></h1>
+        <p class="intro">Apúntate y descubre qué animal con cero dignidad te representa.</p>
+      </header>
+
+      <section class="content" aria-label="Formulario del club">
+        <form id="club-form" class="form-card" novalidate>
+          <label for="name">¿Cómo te llamas?</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Ej. Alex" aria-describedby="name-error">
+          <small class="error" id="name-error"></small>
+
+          <label for="animal">Elige tu animal favorito</label>
+          <select id="animal" name="animal" aria-describedby="animal-error">
+            <option value="">A ver, sorpréndeme...</option>
+          </select>
+          <small class="error" id="animal-error"></small>
+
+          <label class="check-row" for="terms">
+            <input id="terms" name="terms" type="checkbox" aria-describedby="terms-error">
+            <span>Acepto que este animal probablemente sea más popular que yo.</span>
+          </label>
+          <small class="error" id="terms-error"></small>
+
+          <button type="submit">¡Quiero entrar! <span aria-hidden="true">→</span></button>
+          <p class="form-note">Sin cuotas. Con una cantidad preocupante de pelos.</p>
+        </form>
+
+        <section id="result" class="result-card" aria-live="polite" aria-atomic="true" hidden>
+          <p class="eyebrow">Tu nuevo compañero de vida</p>
+          <div class="image-wrap">
+            <img id="animal-image" alt="">
+            <span class="image-sticker" aria-hidden="true">★</span>
+          </div>
+          <h2 id="result-title"></h2>
+          <p id="result-caption"></p>
+          <button id="again" class="again-button" type="button">Elegir otro animal</button>
+        </section>
+      </section>
+      <footer>Hecho con amor, patitas y una pizca de caos.</footer>
+    </main>
+  </body>
+</html>
